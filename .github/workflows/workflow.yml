@@ -1,0 +1,17 @@
+# This is a GitHub Actions workflow configuration file for Continuous Integration (CI).
+name: CI workflow
+
+on:
+  # Trigger the workflow on push events to the main branch.
+  push:
+    branches: ["main"]
+  # Trigger the workflow on pull request events targeting the main branch.
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    # Use the latest Ubuntu environment for the job.
+    runs-on: ubuntu-latest
+    # Use a Python 3.9 slim container for the job.
+    container: python:3.9-slim
